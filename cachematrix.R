@@ -44,11 +44,12 @@ cacheSolve <- function(x, ...) {
     # Return a matrix that is the inverse of 'x'. If the inverse has already been computed,
     # then return it from cache.
     
-    # Try to get the cached value
+    # Exit with error if we weren't passed the correct type of object
     if (is.atomic(x)) {
         message("Error: First create a cacheable object using makeCacheMatrix().")
         return(NA)
     }
+    # Try to get the cached value
     cache <- x$getInverse()
     if (!is.null(cache)) {
         # Found data in the cache, so return it and let the user know it was cached.
