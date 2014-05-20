@@ -45,6 +45,10 @@ cacheSolve <- function(x, ...) {
     # then return it from cache.
     
     # Try to get the cached value
+    if (is.atomic(x)) {
+        message("Error: First create a cacheable object using makeCacheMatrix().")
+        return(NA)
+    }
     cache <- x$getInverse()
     if (!is.null(cache)) {
         # Found data in the cache, so return it and let the user know it was cached.
