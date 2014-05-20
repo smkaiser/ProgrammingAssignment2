@@ -46,8 +46,7 @@ cacheSolve <- function(x, ...) {
     
     # Exit with error if we weren't passed the correct type of object
     if (is.atomic(x)) {
-        message("Error: First create a cacheable object using makeCacheMatrix().")
-        return(NA)
+        stop("Argument must be a cacheable object using makeCacheMatrix().")
     }
     # Try to get the cached value
     cache <- x$getInverse()
