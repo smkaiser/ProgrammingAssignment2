@@ -40,7 +40,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 
-cacheSolve <- function(x, ...) {
+cacheSolve <- function(x) {
     # Return a matrix that is the inverse of 'x'. If the inverse has already been computed,
     # then return it from cache.
     
